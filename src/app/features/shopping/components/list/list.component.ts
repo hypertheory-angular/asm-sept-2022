@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ShoppingListItem } from '../../models';
 
 @Component({
@@ -7,10 +7,7 @@ import { ShoppingListItem } from '../../models';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent {
-  model: ShoppingListItem[] = [
-    { description: 'Hairspray', purchased: false },
-    { description: 'Beer', purchased: true },
-  ];
+  @Input() model: ShoppingListItem[] = [];
 
   constructor() {}
 

@@ -10,13 +10,13 @@ const initialState: CountState = {
 
 export const reducer = createReducer(
   initialState,
-  on(
-    CounterEvents.incremented,
-    (currentState: CountState, action): CountState => {
-      return {
-        current: currentState.current + 1,
-      };
-    }
-  ),
+  on(CounterEvents.incremented, incrementState),
   on(CounterEvents.decremented, (s, a) => ({ current: s.current - 1 }))
 );
+
+// Named function
+function incrementState(state: CountState): CountState {
+  return {
+    current: state.current + 1,
+  } as CountState;
+}

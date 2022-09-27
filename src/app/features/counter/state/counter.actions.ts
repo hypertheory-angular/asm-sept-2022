@@ -16,6 +16,13 @@ export const CountByEvents = createActionGroup({
   },
 });
 
+export const CounterFeatureEvents = createActionGroup({
+  source: 'Counter Feature Events',
+  events: {
+    entered: emptyProps(),
+  },
+});
+
 export type CountByOptions = 1 | 3 | 5;
 
 type CountByPayload = {

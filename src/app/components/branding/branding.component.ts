@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectCounterCurrent } from 'src/app/features/counter/state';
 
 @Component({
   selector: 'app-branding',
@@ -6,5 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./branding.component.css'],
 })
 export class BrandingComponent {
-  constructor() {}
+  currentCount$ = this.store.select(selectCounterCurrent);
+  constructor(private store: Store) {}
 }

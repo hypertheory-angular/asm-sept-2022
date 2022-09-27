@@ -11,7 +11,8 @@ const initialState: CountState = {
 export const reducer = createReducer(
   initialState,
   on(CounterEvents.incremented, incrementState),
-  on(CounterEvents.decremented, (s, a) => ({ current: s.current - 1 }))
+  on(CounterEvents.decremented, (s) => ({ current: s.current - 1 })),
+  on(CounterEvents.reset, () => initialState)
 );
 
 // Named function

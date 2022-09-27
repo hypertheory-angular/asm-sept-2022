@@ -30,3 +30,5 @@ export const selectCounterCurrent = createSelector(
   selectCountBranch,
   (b) => b.current
 );
+
+export const selectCountingBy = createSelector(selectCountBranch, (b) => b.by);

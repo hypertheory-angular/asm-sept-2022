@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SongEffects } from './state/effects/songs.effects';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorDisplayComponent } from './components/error-display/error-display.component';
+import { ListSorterComponent } from './components/list-sorter/list-sorter.component';
 const routes: Routes = [
   {
     path: '',
@@ -44,6 +45,7 @@ const routes: Routes = [
     SongListComponent,
     SongEntryComponent,
     ErrorDisplayComponent,
+    ListSorterComponent,
   ],
   imports: [
     CommonModule,

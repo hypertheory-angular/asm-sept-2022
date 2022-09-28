@@ -1,1 +1,30 @@
-<p>song-entry works!</p>
+<form [formGroup]="form" (ngSubmit)="addThisSong()">
+  <div class="form-group">
+    <label for="Title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="title"
+      id="Title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="Artist">Artist</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="artist"
+      id="Artist"
+    />
+  </div>
+  <div class="form-group">
+    <label for="Album">Album</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="album"
+      id="Album"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Add This Song!</button>
+</form>

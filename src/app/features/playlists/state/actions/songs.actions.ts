@@ -1,4 +1,5 @@
 import { createActionGroup, props } from '@ngrx/store';
+import { PlaylistCreateModel } from '../../models';
 import { SongEntity } from '../reducers/songs.reducer';
 
 // Events are the things that components dispatch
@@ -6,7 +7,9 @@ import { SongEntity } from '../reducers/songs.reducer';
 // past tense thing that happened.
 export const SongEvents = createActionGroup({
   source: 'Song Events',
-  events: {},
+  events: {
+    added: props<{ payload: PlaylistCreateModel }>(),
+  },
 });
 
 // The things the reducer needs.

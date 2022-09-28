@@ -4,3 +4,9 @@ export interface PlaylistItemModel {
   artist: string;
   album?: string;
 }
+
+export interface PlaylistCreateModel {
+  title: string;
+  artist: string;
+  album?: string;
+}

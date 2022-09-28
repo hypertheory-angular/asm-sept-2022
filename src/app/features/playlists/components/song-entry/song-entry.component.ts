@@ -30,7 +30,7 @@ export class SongEntryComponent {
   });
   constructor(private store: Store) {}
 
-  addThisSong() {
+  addThisSong(foci: HTMLInputElement) {
     console.log(this.form.value);
     if (this.form.valid) {
       const payload: PlaylistCreateModel = {
@@ -39,6 +39,9 @@ export class SongEntryComponent {
         album: this.form.controls.album.value!,
       };
       this.store.dispatch(SongEvents.added({ payload }));
+
+      this.form.reset();
+      foci.focus();
     }
   }
 }
